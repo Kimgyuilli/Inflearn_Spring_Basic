@@ -1,16 +1,20 @@
 package com.example.inflearn_spring_basic.order;
 
+import com.example.inflearn_spring_basic.AppConfig;
 import com.example.inflearn_spring_basic.member.Grade;
 import com.example.inflearn_spring_basic.member.Member;
 import com.example.inflearn_spring_basic.member.MemberService;
-import com.example.inflearn_spring_basic.member.MemberServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class OrderServiceTest {
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+
+    // AppConfig를 사용하지 않고 직접 구현체를 생성
+    AppConfig appConfig = new AppConfig();
+
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {

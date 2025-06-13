@@ -3,16 +3,19 @@ package com.example.inflearn_spring_basic;
 import com.example.inflearn_spring_basic.member.Grade;
 import com.example.inflearn_spring_basic.member.Member;
 import com.example.inflearn_spring_basic.member.MemberService;
-import com.example.inflearn_spring_basic.member.MemberServiceImpl;
 import com.example.inflearn_spring_basic.order.Order;
 import com.example.inflearn_spring_basic.order.OrderService;
-import com.example.inflearn_spring_basic.order.OrderServiceImpl;
 
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+
+        // AppConfig를 통해 의존관계 주입
+        AppConfig appConfig = new AppConfig();
+
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
+
 
         // 회원 생성
         Long memberId = 1L;
