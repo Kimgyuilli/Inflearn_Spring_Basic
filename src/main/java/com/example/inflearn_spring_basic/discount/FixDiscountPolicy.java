@@ -2,7 +2,9 @@ package com.example.inflearn_spring_basic.discount;
 
 import com.example.inflearn_spring_basic.member.Grade;
 import com.example.inflearn_spring_basic.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discounFixAmount = 1000; // 고정 할인 금액
