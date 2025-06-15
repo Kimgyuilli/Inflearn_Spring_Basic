@@ -17,5 +17,4 @@ public class AutoAppConfig {
     // 이 설정 클래스는 @ComponentScan을 통해 자동으로 빈을 등록하는 역할을 합니다.
     // @ComponentScan은 스프링이 자동으로 빈을 등록할 때 사용하는 어노테이션입니다.
 
-
 }
