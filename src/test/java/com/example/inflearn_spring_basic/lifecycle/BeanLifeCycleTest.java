@@ -25,7 +25,7 @@ public class BeanLifeCycleTest {
         // 이 클래스는 Bean의 생명주기를 관리하는 설정 클래스로 사용할 수 있습니다.
         // 예를 들어, @Bean 어노테이션을 사용하여 빈을 정의하고,
         // @PostConstruct 및 @PreDestroy 어노테이션을 사용하여 초기화 및 소멸 메서드를 정의할 수 있습니다.
-        @Bean
+        @Bean(initMethod = "init", destroyMethod = "close")
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring.dev");
