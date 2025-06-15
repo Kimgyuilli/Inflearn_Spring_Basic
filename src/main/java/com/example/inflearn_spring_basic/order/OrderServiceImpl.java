@@ -3,9 +3,11 @@ package com.example.inflearn_spring_basic.order;
 import com.example.inflearn_spring_basic.discount.DiscountPolicy;
 import com.example.inflearn_spring_basic.member.Member;
 import com.example.inflearn_spring_basic.member.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
@@ -13,12 +15,6 @@ public class OrderServiceImpl implements OrderService{
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("memberRepository = " + memberRepository);
-        System.out.println("discountPolicy = " + discountPolicy);
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
