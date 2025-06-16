@@ -3,10 +3,11 @@ package com.example.inflearn_spring_basic.common;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(value = "request") // Request scope for web applications
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS) // Request scope for web applications
 public class MyLogger {
     private String uuid;
     private String requestURL;
